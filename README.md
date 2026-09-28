@@ -511,6 +511,6 @@ The results highlight that as the degree of parallelism increases and hardware i
 
 ## Author
 
-**Sankalp Prakash Patil**  
+Krish D Janagekar
 *B.Tech — Computer Science & Artificial Intelligence*  
 KLE Technological University
