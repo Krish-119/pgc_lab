@@ -1,3 +1,12 @@
+# Parallel and GPU Computing Laboratory (PGC Lab)
+
+### Lab Experiments Index
+- 📌 **Experiment 1:** [Parallel Matrix Multiplication using Sequential, OpenMP, MPI and CUDA](#parallel-matrix-multiplication-using-sequential-openmp-mpi-and-cuda)
+- 📌 **Experiment 2:** [Multithreaded Programming Using Pthreads and OpenMP](README_Multithreaded_Pthreads_OpenMP_Krish.md)
+- 📌 **Experiment 5:** [Analyze Synchronization Mechanisms in Parallel Programs](README_Synchronization_Mechanisms_Krish.md) | [Directory](Experiment-5-Synchronization-Mechanisms/)
+
+---
+
 # Parallel Matrix Multiplication using Sequential, OpenMP, MPI and CUDA
 
 ## Experiment 1 — Parallel Computing
