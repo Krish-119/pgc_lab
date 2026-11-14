@@ -1,0 +1,24 @@
+EXPERIMENT 5: NEURAL NETWORK LAYERS IN CUDA
+GPU detected: NVIDIA RTX 4500 Ada Generation
+
+Testing individual CUDA kernels...
+Matrix multiplication + bias: PASSED
+ReLU: PASSED
+Sigmoid: PASSED
+
+Forward-pass dimensions:
+Input: 256 x 128
+Hidden layer: 256 x 64
+Output: 256 x 10
+
+Average CPU compute time: 0.526860 ms
+Average GPU kernel-only time: 0.026517 ms
+Average GPU end-to-end time: 0.066010 ms
+Kernel-only speedup: 19.868913x
+End-to-end speedup: 7.981518x
+
+Maximum absolute output difference: 0.000000
+CPU and GPU outputs: MATCH (within tolerance)
+
+First 10 output values (GPU):
+0.498196 0.503101 0.508006 0.512911 0.517814 0.497729 0.502638 0.507548 0.512457 0.517364
