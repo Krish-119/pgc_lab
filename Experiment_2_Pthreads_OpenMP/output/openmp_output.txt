@@ -1,0 +1,42 @@
+=== OPENMP EXECUTION OUTPUT ===
+
+[omp1]
+Hello from Thread 0 of 4
+Hello from Thread 2 of 4
+Hello from Thread 1 of 4
+Hello from Thread 3 of 4
+
+[omp_sum]
+Input Array: 10 20 30 40 50 60 70 80 
+Thread 0 processing array[0] = 10
+Thread 0 processing array[1] = 20
+Thread 1 processing array[2] = 30
+Thread 1 processing array[3] = 40
+Thread 2 processing array[4] = 50
+Thread 2 processing array[5] = 60
+Thread 3 processing array[6] = 70
+Thread 3 processing array[7] = 80
+Total sum = 360 (Expected: 360)
+
+[omp_race]
+=== OpenMP Race Condition ===
+Expected counter: 1000000
+Actual counter  : 412850
+Observation: Data race caused lost updates!
+
+[omp_critical]
+=== OpenMP Critical Section ===
+Expected counter: 1000000
+Actual counter  : 1000000
+Status          : CORRECT
+
+[omp_barrier]
+Thread 0 starting phase 1...
+Thread 1 starting phase 1...
+Thread 2 starting phase 1...
+Thread 3 starting phase 1...
+Thread 0 passed barrier into phase 2!
+Thread 2 passed barrier into phase 2!
+Thread 1 passed barrier into phase 2!
+Thread 3 passed barrier into phase 2!
+All threads completed synchronized phases.
