@@ -1,0 +1,18 @@
+Table 1: false sharing (100000000 increments in total)
+Layout   | Threads | Final Count | Correctness | Time (s)
+---------------------------------------------------------
+adjacent |       1 |   100000000 | Correct     |   0.0390
+padded   |       1 |   100000000 | Correct     |   0.0368
+---------------------------------------------------------
+adjacent |       2 |   100000000 | Correct     |   0.0268
+padded   |       2 |   100000000 | Correct     |   0.0232
+---------------------------------------------------------
+adjacent |       4 |   100000000 | Correct     |   0.0347
+padded   |       4 |   100000000 | Correct     |   0.0180
+---------------------------------------------------------
+
+Table 2: memory sweep of 512 MB (4 passes)
+Threads | Time (s)
+-------------------
+      1 |   0.1362
+      2 |   0.0951
