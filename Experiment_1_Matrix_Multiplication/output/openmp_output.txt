@@ -1,0 +1,12 @@
+============================================================
+   OPENMP SHARED-MEMORY MATRIX MULTIPLICATION               
+============================================================
+Matrix Dimensions   : 4000 x 4000
+OpenMP Threads Used : 12
+Starting parallel matrix multiplication with OpenMP...
+
+--- RESULTS ---
+OpenMP Execution Time : 230.801465 seconds
+Verification C[0][0]   : 4000.00 (Expected: 4000.00)
+Status                 : PASSED
+============================================================

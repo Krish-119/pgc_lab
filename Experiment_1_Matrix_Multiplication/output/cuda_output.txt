@@ -1,0 +1,16 @@
+============================================================
+   CUDA GPU MASSIVELY PARALLEL MATRIX MULTIPLICATION        
+============================================================
+Device: NVIDIA GeForce RTX 2050 (Compute 8.6)
+Matrix Dimensions       : 4000 x 4000
+Memory Per Matrix       : 61.04 MB
+Grid Configuration      : 250 x 250 blocks
+Block Configuration     : 16 x 16 threads
+Total Logical Threads   : 16000000 threads
+
+--- EXECUTION RESULTS ---
+Kernel Execution Time   : 0.316872 seconds
+Total CUDA Phase Time   : 0.343028 seconds
+Verification C[0][0]    : 4000.00 (Expected: 4000.00)
+Status                  : PASSED
+============================================================

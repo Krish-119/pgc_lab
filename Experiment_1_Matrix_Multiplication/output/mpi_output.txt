@@ -1,0 +1,12 @@
+============================================================
+   MPI DISTRIBUTED-MEMORY MATRIX MULTIPLICATION             
+============================================================
+Matrix Dimensions   : 4000 x 4000
+MPI Processes       : 4
+Rows per Process    : 1000
+
+--- RESULTS ---
+MPI Execution Time    : 138.772617 seconds
+Verification C[0][0]  : 4000.00 (Expected: 4000.00)
+Status                : PASSED
+============================================================

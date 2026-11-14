@@ -1,0 +1,13 @@
+============================================================
+   SEQUENTIAL MATRIX MULTIPLICATION (BASELINE CPU)          
+============================================================
+Matrix Dimensions : 4000 x 4000
+Allocating memory for matrices A, B, and C...
+Initializing matrices (A = 1.0, B = 1.0, C = 0.0)...
+Starting sequential matrix multiplication...
+
+--- RESULTS ---
+Sequential Execution Time : 417.205920 seconds
+Verification C[0][0]       : 4000.00 (Expected: 4000.00)
+Status                     : PASSED
+============================================================
