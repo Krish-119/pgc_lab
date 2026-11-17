@@ -17,6 +17,7 @@ Complete practical laboratory implementation, comparative benchmarks, and compre
 | **3** | **Cache Coherence & NUMA Performance** | Snooping cache coherence simulation (MSI, MESI, MOESI), false sharing mitigation, and NUMA memory sweeps. | Python 3, C, OpenMP, `numactl`, `hwloc` | [Experiment_3_Cache_Coherence](Experiment_3_Cache_Coherence/) | ✅ **Completed** |
 | **4** | **Synchronization Mechanisms** | Evaluation of race conditions, critical sections, hardware atomics, barriers, and POSIX semaphores. | C, OpenMP, POSIX Semaphores | [Experiment_4_Synchronization](Experiment_4_Synchronization/) | ✅ **Completed** |
 | **5** | **Neural Network Layers in CUDA** | Custom CUDA kernels for matrix multiplication with fused bias, ReLU activation, and Sigmoid inference. | CUDA C++, C++, MSVC / GCC | [Experiment_5_Neural_Network_CUDA](Experiment_5_Neural_Network_CUDA/) | ✅ **Completed** |
+| **6** | **Memory Optimization in CUDA** | Memory coalescing analysis, uncoalesced vs. shared-memory coalesced matrix transpose, and naive matrix multiplication. | CUDA C++, C++, NVIDIA GPU | [Experiment_6_Memory_Optimization_CUDA](Experiment_6_Memory_Optimization_CUDA/) | ✅ **Completed** |
 
 ---
 
@@ -60,6 +61,14 @@ Parallel_Computing_Lab/
 │   ├── output/                 # Full execution output transcript (RTX 4500 Ada reference run)
 │   └── screenshots/            # Guidelines for environment, compiler, and kernel validation
 │
+├── Experiment_6_Memory_Optimization_CUDA/
+│   ├── README.md               # 22-section comprehensive experiment documentation
+│   ├── Exp_6_Memory_Optimization_CUDA.pdf # Faculty reference document
+│   ├── Makefile                # nvcc build script
+│   ├── src/                    # exp6.cu, exp6_cuda_memory.cu
+│   ├── output/                 # execution_output.txt (benchmarks & verification)
+│   └── screenshots/            # 01_execution_output.png, README.md guide
+│
 └── README.md                   # Master index and laboratory overview (this file)
 ```
 
@@ -98,6 +107,14 @@ Parallel_Computing_Lab/
   - Average CPU compute time: $0.526860\text{ ms}$.
   - GPU kernel-only time: $0.026517\text{ ms}$ (**$19.87\times$ speedup**).
   - GPU end-to-end time: $0.066010\text{ ms}$ (**$7.98\times$ speedup**).
+
+### Experiment 6: Memory Optimization in CUDA
+- **Workload**: Out-of-place matrix transpose ($4096 \times 4096$) comparing uncoalesced column writes vs. shared-memory tiled coalesced writes with $+1$ bank padding (`tile[32][33]`), and naive matrix multiplication ($1024 \times 1024$).
+- **Verification**: $100\%$ element-by-element equivalence between input and transposed matrix verified (`PASS`), and CPU spot-checked double-precision reference verification for matrix multiplication (`PASS`).
+- **Results**:
+  - **Uncoalesced Transpose**: $0.805\text{ ms}$ ($166.7\text{ GB/s}$).
+  - **Coalesced Transpose (Shared Memory)**: **$0.416\text{ ms}$ ($322.7\text{ GB/s}$)** — **$1.94\times$ speedup** and nearly $2\times$ memory bandwidth utilization.
+  - **Naive Matrix Multiplication**: $1.385\text{ ms}$ ($1550.0\text{ GFLOPS}$ / $1.55\text{ TFLOPS}$).
 
 ---
 
@@ -138,4 +155,9 @@ cd ../Experiment_4_Synchronization/src && make
 cd ../Experiment_5_Neural_Network_CUDA
 nvcc -O2 src/neural_network.cu -o neural_network
 ./neural_network
+
+# Experiment 6 (on CUDA-capable workstation)
+cd ../Experiment_6_Memory_Optimization_CUDA
+nvcc -O2 src/exp6.cu -o exp6
+./exp6
 ```

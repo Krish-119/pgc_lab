@@ -1,0 +1,14 @@
+GPU: NVIDIA GeForce RTX GPU (CUDA Device 0)
+
+=== PART A: Matrix transpose (N = 4096) ===
+Uncoalesced :   0.805 ms |   166.7 GB/s | PASS
+Coalesced   :   0.416 ms |   322.7 GB/s | PASS
+Speedup (uncoalesced / coalesced) = 1.94x
+
+=== PART B: Naive matrix multiplication (N = 1024) ===
+Naive matmul:   1.385 ms |  1550.0 GFLOPS | PASS
+
+=== SUMMARY ===
+Transpose uncoalesced : 0.805 ms
+Transpose coalesced   : 0.416 ms
+Naive matmul          : 1.385 ms
